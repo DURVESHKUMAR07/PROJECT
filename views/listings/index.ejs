@@ -1,0 +1,43 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all lists</title>
+    <link rel="stylesheet" href="../../public/style.css">
+</head> -->
+
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <h3>All List</h3>
+
+    <!-- <form action="/listing/new" method="get">  
+        <button>Create New Listing</button>
+    </form> -->
+
+    <br><br>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let list of allListing){ %>
+
+            <a href="/listing/<%= list._id %>" class="listing-link">
+                <div class="card col listing-card" >
+                    <img src="<%= list.image %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+                    <div class="card-img-overlay">&#x2764;&#xfe0f;</div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= list.title %> </b> <br>
+                        &#8377; <%= list.price.toLocaleString("en-IN") %> / night
+                    </p>
+                    </div>
+                </div>
+            </a>
+
+        <% } %>
+    </div>
+
+    
+</body>
+
+<!-- </html> -->
